@@ -8,7 +8,6 @@
 #define maxHP 30
 
 struct player_t {
-	char *name;
 	int hp;
 	struct deck_t deck;
 	struct deck_t hand;
