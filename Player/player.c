@@ -40,7 +40,7 @@ struct card_t play_card_from_hand(struct player_t *player, int card) {
 		return played_card;
 }
 
-void next_turn(struct player_t *player) {
+void turn_begin(struct player_t *player) {
 	struct card_t drawn_card;
 	if(draw_card(&player->deck, &drawn_card) == -1) player->hand.card[player->hand.top++] = drawn_card;	
 }
