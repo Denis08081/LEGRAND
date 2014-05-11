@@ -6,7 +6,6 @@
 #include "player.h"
 
 void init_player(struct player_t *player) {
-	player->name = NULL;
 	init_deck(&player->deck);
 	init_deck(&player->hand);
 	init_manapool(&player->pool);

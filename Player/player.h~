@@ -9,7 +9,6 @@
 
 struct player_t {
 	int hp;
-	char *name;
 	struct deck_t deck;
 	struct deck_t hand;
 	struct manapool_t pool;
