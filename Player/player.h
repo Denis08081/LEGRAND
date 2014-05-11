@@ -19,6 +19,6 @@ void init_player(struct player_t *player);
 int change_hp(struct player_t *player, int hp);
 int put_card(struct player_t *player, int card, struct card_t *return_card); 
 struct card_t play_card_from_hard (struct player_t *player, int card);
-void next_turn(struct player_t *player);
+void turn_begin(struct player_t *player);
 
 #endif
