@@ -1,24 +1,17 @@
-#ifndef Player
-#define Player
+#ifndef xPLAYERH
+#define xPLAYERH
 
-#include "deck.h"
-#include "card.h"
 #include "manapool.h"
-
-#define maxHP 30
-
+#define xMAXHEALTH 30
 struct player_t {
-	int hp;
-	char *name;
+	int health;
 	struct deck_t deck;
-	struct deck_t hand;
-	struct manapool_t pool;
-} player;
+	struct manapool_t manapool;
+	struct deck_t cards_in_hand;
+	int Open_Spots_Hand[5];
+};
 
-void init_player(struct player_t *player);
-int change_hp(struct player_t *player, int hp);
-int put_card(struct player_t *player, int card, struct card_t *return_card); 
-struct card_t play_card_from_hard (struct player_t *player, int card);
+int change_hp(struct player_t *player,int change);
 void turn_begin(struct player_t *player);
 
-#endif
+#endif 

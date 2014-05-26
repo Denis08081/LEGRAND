@@ -1,23 +1,16 @@
-#include "card.h"
-#include <stdio.h>
-
-int attack (struct card_t *attacker, struct card_t *defender) {
-
-	attacker -> health -= defender -> attack;
-	defender -> health -= attacker -> attack;
-
-	if (attacker -> health == 0 && defender -> health == 0) {
-		return 0;
-	} else if (attacker -> health > 0) {
-			return 1;
-		} else if (defender -> health > 0) {
-			return 2;
-			}
-			else {
-				return 3;
-			}
+#include "card.h"			
+int card_attack(struct card_t *attacker, struct card_t *defender) 
+{
+	int survivor=0;
+	attacker -> health -= defender -> damage;
+	defender -> health -= attacker -> damage; 
+	if(attacker -> health > 0) survivor++;
+	if(defender -> health > 0) survivor+=2;
+	return survivor;
 }
-
-void print_card (struct card_t card) {
-	printf("%s[h = %d, a = %d, c = %d]", card.name, card.health, card.attack, card.cost);
+void print_card(struct card_t card,int i) {
+	if(card.mana < 0) card.mana = 0;
+	if (i == 1)
+	printf("%d|%d (%d)|", card.health,card.damage,card.mana);
+	else printf(" %d|%d  #", card.health,card.damage);
 }

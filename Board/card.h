@@ -1,15 +1,15 @@
-#ifndef Card
-#define Card
-
-#define CName 25
+#ifndef CARD
+#define CARD
 
 struct card_t {
-	char name[CName];
+
+	char name[25];
 	int health;
-	int attack;
-	int cost;
+	int damage;
+	int mana;
+
 };
 
-int attack (struct card_t *attacker, struct card_t *defender);
-
+int card_attack(struct card_t *attacker, struct card_t *defender);
+void print_card(struct card_t card,int i);
 #endif

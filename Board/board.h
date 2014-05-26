@@ -1,27 +1,25 @@
-#ifndef Board
-#define Board
-
-#include "card.h"
-#include "deck.h"
+#ifndef xBOARD
+#define xBOARD
 #include "player.h"
-
-#define b_count 50
+#include <string.h>
+#include <stdio.h>
 
 struct board_t {
-	struct card_t position [2][5];
-	struct player_t pl [2];
+	struct player_t Player[2];
+	struct deck_t   Cards_on_Board;
+	int Card_Positions[5][2];
+	int Open_Spots[10];
+	int Card_Active[5][2];
 };
+void PrintBoard(struct board_t board);
+int init_board(struct board_t *board);
+int can_play_card(struct board_t *board, int first_pl, int card, int
+num_lane);
+int play_card(struct board_t *board, int first_pl, int card, int
+num_lane);
+void turn_end(struct board_t *board, int first_pl);
 
 
-void init_board(struct board_t *board);
-void print_border(char ch);
-void print_field(struct board_t board, int side);
-void print_board(struct board_t board);
-int position_test(struct board_t board, int side, int coll);
-int play_card(struct board_t *board, struct card_t card, int side);
-void turn_end(struct board_t *board, int side);
-int who_wins(struct board_t board);
-int load_deck(struct board_t *board, int side, char *filename);
-void game_begin(struct board_t *board, int *side);
+
 
 #endif

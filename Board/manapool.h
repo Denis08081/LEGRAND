@@ -1,20 +1,15 @@
-#ifndef Manapool
-#define Manapool
-
+#ifndef xMANAPOOL
+#define xMANAPOOL
 #include "card.h"
-
+#include "deck.h"
+#define xMAXMANA 10
 struct manapool_t {
 	int mana;
-	int maxM;
+	int max_mana;
 };
 
-
-void init_manapool(struct manapool_t *pool);
-
-int use_mana(struct manapool_t *pool, int loss);
-
-void get_mana(struct manapool_t *pool, int income);
-
 int can_put_card(struct card_t card_to_put, struct manapool_t pool);
+int MP_use_card(struct card_t card, struct manapool_t *pool);
+int change_mana(struct manapool_t *manapool,int remove);
 
 #endif
