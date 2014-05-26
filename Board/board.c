@@ -78,8 +78,8 @@ int init_board(struct board_t *board)
 	board -> Player[0].manapool.max_mana = 1;
 	board -> Player[1].manapool.mana = 1;
 	board -> Player[1].manapool.max_mana = 1;
-	if(!DeckFromFile(board,0,"p1deck.csv")) return 0;
-	if(!DeckFromFile(board,1,"p1deck.csv")) return 0;
+	if(!DeckFromFile(board,0,"deck.csv")) return 0;
+	if(!DeckFromFile(board,1,"deck.csv")) return 0;
 	return 1;
 }
 
