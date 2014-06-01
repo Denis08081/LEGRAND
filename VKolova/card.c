@@ -12,6 +12,6 @@ int card_attack(struct card_t *attacker, struct card_t *defender) {
 void print_card(struct card_t card,int i) {
 	if(card.mana < 0) card.mana = 0;
 	if (i == 1)
-	printf(" %d|%d (%d) |", card.health, card.damage, card.mana);
-	else printf(" %d|%d  #", card.health, card.damage);
+	printf(" %d|%d(%d) |", card.health, card.damage, card.mana);
+	else printf("  %d|%d   #", card.health, card.damage);
 }
