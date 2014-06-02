@@ -47,7 +47,7 @@ int main() {
 		}		
 		pTurn = 1-pTurn;				
 	}
-	printf("\n\nWinner is Player: %d\n\n", winner+1);
+	printf("\n\nWinner is Player: %d\n\n", winner);
 	
 	return 0;
 }

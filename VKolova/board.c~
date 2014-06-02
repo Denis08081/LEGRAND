@@ -2,7 +2,7 @@
 
 void PrintBoard(struct board_t board) {
 
-	printf("\n\nPLAYER: Player One (%dhp), MANA %d/%d, TURN:%d", board.Player[0].health, board.Player[0].manapool.mana, board.Player[0].manapool.max_mana, board.Player[0].turn);
+	printf("\n\nPLAYER: COMPUTER (%dhp), MANA %d/%d, TURN:%d", board.Player[0].health, board.Player[0].manapool.mana, board.Player[0].manapool.max_mana, board.Player[0].turn);
 	printf("\n___________________________________________________________________\n| ");
 	int i;
 	for (i = 0; i < 5; i++) {
@@ -25,7 +25,7 @@ void PrintBoard(struct board_t board) {
 		else print_card(board.Player[1].cards_in_hand.card_deck[i],1);
 	}
 	printf("\n___________________________________________________________________\n");
-	printf("PLAYER: Player Two (%dhp), MANA %d/%d, TURN:%d\n", board.Player[1].health, board.Player[1].manapool.mana, board.Player[1].manapool.max_mana, board.Player[1].turn);	
+	printf("PLAYER: PLAYER (%dhp), MANA %d/%d, TURN:%d\n", board.Player[1].health, board.Player[1].manapool.mana, board.Player[1].manapool.max_mana, board.Player[1].turn);	
 }
 
 int DeckFromFile(struct board_t *board, int pPlayer, char *filename) {	
