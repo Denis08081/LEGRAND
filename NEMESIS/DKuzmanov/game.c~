@@ -67,7 +67,7 @@ int WriteGeneratedDeckToFile(struct deck_t *deck,char *filename) {
 	int prevSize = deck -> top;
 	struct card_t CardToWrite;
 	fp = fopen(filename, "w");
-	if (fp == NULL) return 0; //Check for errors in creating/rewriting file.
+	if (fp == NULL) return 0; 
 	while( deck->top != 0 ) {
 		
 		draw_card(deck,&CardToWrite);
